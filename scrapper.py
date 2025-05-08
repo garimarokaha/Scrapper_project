@@ -8,8 +8,9 @@
 #git add . => track all files
 #git commit -m "Your message"
 
-
+import json
 import requests
+import sqlite3
 from bs4 import BeautifulSoup
 import sqlite3
 URL = "http://books.toscrape.com/" 
@@ -68,7 +69,7 @@ def scrape_books(url):
     return books
 
 def save_to_json(books):
-    import json
+   
 
     with open ("books.json","w",encoding="utf-8") as f:
         json.dump(books, f,indent =4,ensure_ascii=False)
